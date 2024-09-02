@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator From JS</title>
+    <link rel="icon" href="calc 1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <style>
+        *
+{
+    margin: 0;
+    padding: 0;
+    background: url(calc\ 2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: white;
+    
+}
+.container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.Calculator
+{
+    
+    display: grid;
+    grid-template-columns: repeat(5,70px);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0px 0px 8px 6px rgba(203,235,236,0.75);
+}
+input
+{
+    text-align: right;
+    padding-right: 10px;
+    grid-column: span 5;
+    height: 60px;
+    box-shadow: inset 5px 5px 12px #ffffff, 5px 5px 12px rgba(0, 0, 0, .16);
+    font-weight: bolder ;
+    font-size: 25px;
+    border-radius: 10px;
+    border: 0;
+}
+button
+{
+    height: 60px;
+    width: 50px;
+    border-radius: 45%;
+    border: 0;
+    box-shadow: inset 5px 5px 12px #ffffff, 5px 5px 12px rgba(0, 0, 0, .16);
+    margin: 12px 12px;
+    font-size: 20px;
+
+}
+button:hover
+{
+    opacity: 0.95;
+    transform: scale(0.95);
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="Calculator">
+            <input type="text" placeholder="0" id="os">
+            
+            <button onclick="del()"><i class="fa-solid fa-delete-left"></i></button>
+            <button onclick="sql()"><i class="fa-regular fa-square"></i></button>
+            <button onclick="cube()"><i class="fa-solid fa-cube"></i></button>
+            <button onclick="sqrt('sqrt')">sqrt</button>
+            <button onclick="Clear()">C</button>
+            <button onclick="display('/')">/</button>
+            <button onclick="sin()">Sin</button>
+            <button onclick="display('7')">7</button>
+            <button onclick="display('8')">8</button>
+            <button onclick="display('9')">9</button>
+            <button onclick="display('*')">*</button>
+            <button onclick="tan()">Tan</button>
+            <button onclick="display('4')">4</button>
+            <button onclick="display('5')">5</button>
+            <button onclick="display('6')">6</button>
+            <button onclick="display('-')">-</button>   
+            <button onclick="cos()">Cos</button>
+            <button onclick="display('1')">1</button>
+            <button onclick="display('2')">2</button>
+            <button onclick="display('3')">3</button>
+            <button onclick="display('+')">+</button>
+            <button onclick="display('.')">.</button>
+            <button onclick="display('%')">%</button>
+            <button onclick="display('0')">0</button>
+            <button onclick="calculate()" class="equal">=</button>
+
+
+
+        </div>
+    </div>
+
+
+
+    <script>
+        const os=document.getElementById('os')
+
+console.log(os);
+
+function display(txt)
+{
+    os.value = os.value+txt;
+    console.log(os.value)
+}
+
+function Clear()
+{
+    os.value=" "
+}
+
+function del()
+{
+    os.value=os.value.slice(0,-1)
+}
+function calculate()
+{
+    os.value=eval(os.value);
+}
+function sql()
+{
+    let a=prompt('Enter The Value')
+    let res=a*a;
+    alert(`The Answer is ${res}`);
+}
+function cube()
+{
+    let a=prompt('Enter The Value')
+    let res=a*a*a;
+    alert(`The Answer is ${res}`);
+}
+function sin()
+{
+    os.value= Math.sin(os.value);
+}
+function sqrt()
+{
+    os.value= Math.sqrt(os.value,2);
+}
+function cos()
+{
+    os.value= Math.cos(os.value);
+}
+function tan()
+{
+    os.value= Math.tan(os.value);
+}
+    </script>
+    <script src="index.js"></script>
+</body>
+</html>
